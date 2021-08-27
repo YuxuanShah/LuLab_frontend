@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'common/other_login.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -129,6 +130,7 @@ class Login extends StatelessWidget {
               ),
             ),
           ),
+          OtherLogin(),
           // 协议
           protocolButton(),
         ],

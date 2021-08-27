@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'phone_login.dart';
+import 'common/other_login.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class VerifyCodeLogin extends StatelessWidget {
           // 标题行
           TitleLineWidget(),
           Container(
-            padding: EdgeInsets.only(top: 100, left: 50, right: 50),
+            padding: EdgeInsets.only(top: 100, left: 100, right: 100),
             child: Column(
               children: [
                 // 手机号
@@ -39,7 +40,13 @@ class VerifyCodeLogin extends StatelessWidget {
                 SizedBox(
                   height: 60,
                 ),
+                // 提交
                 SubmitButtonWidget(),
+                SizedBox(
+                  height: 50,
+                ),
+                // 其他登录
+                OtherLogin(),
               ],
             ),
           )

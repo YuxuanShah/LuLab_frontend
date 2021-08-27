@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'routers/router.dart';
 
+// import 'pages/login/login.dart';
+import 'pages/login/verify_code.dart';
+
 /*
 启动页面
 */
@@ -14,13 +17,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: Size(750, 1334), //配置设计稿的宽度高度
-        builder: () => MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: "陆向谦Lab",
-            theme: mDefaultTheme,
-            initialRoute: '/',
-            onGenerateRoute: onGenerateRoute));
+      designSize: Size(750, 1334), //配置设计稿的宽度高度
+      builder: () => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "陆向谦Lab",
+        theme: mDefaultTheme,
+        home: Home(),
+        // initialRoute: '/',
+        // onGenerateRoute: onGenerateRoute),
+      ),
+    );
   }
 }
 
