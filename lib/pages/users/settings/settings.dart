@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'AccountSet.dart';
+import '../../../pages/user/login-SZQ/login.dart';
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -36,7 +37,7 @@ class _SettingsPageState extends State<SettingsPage> {
             left: 0,
             child: Container(
               width: screenwidth,
-              height: 240,
+              height: 300,
               child: Column(
                 children: [
                   //“个人信息”栏
@@ -222,6 +223,47 @@ class _SettingsPageState extends State<SettingsPage> {
                             top: 3,
                             child: Text(
                               '关于我们',
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 3,
+                            right: 7,
+                            child: Icon(
+                              Icons.keyboard_arrow_right,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: screenwidth,
+                    height: 45,
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          width: 1,
+                          color: Colors.black26,
+                        ),
+                      ),
+                    ),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Login1()));
+                      },
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned(
+                            left: 17,
+                            top: 3,
+                            child: Text(
+                              '登陆',
                               style: TextStyle(
                                 fontSize: 17,
                                 color: Colors.black,
