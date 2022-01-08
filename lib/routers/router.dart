@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+
 import '../app.dart';
-import '../pages/start/loading.dart';
-import '../pages/search.dart';
 import '../pages/other/customer.dart';
 import '../pages/other/download.dart';
 import '../pages/other/history.dart';
 import '../pages/other/message.dart';
-import '../pages/start/first_guide.dart';
+import '../pages/search.dart';
 import '../pages/sign_in/login.dart';
+import '../pages/start/first_guide.dart';
+import '../pages/start/loading.dart';
 //import '../pages/users/settings/settings.dart';
 //import '../pages/course/course_index.dart';
 
@@ -15,7 +16,7 @@ import '../pages/sign_in/login.dart';
 final Map<String, Function> routes = {
   '/': (context) => const LoadingPage(),
   '/firstguide': (context) => const FirstGuidePage(),
-  '/app': (context) => const App(),
+  '/app': (context) => App(),
   '/search': (context) => const SearchPage(),
   '/history': (context) => const History(),
   '/download': (context) => const Download(),

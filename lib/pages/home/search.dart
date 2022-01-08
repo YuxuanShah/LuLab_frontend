@@ -1,11 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 //import 'services/screenAdapter.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({Key? key}) : super(key: key);
+  SearchPage({Key? key}) : super(key: key);
 
-  @override
   _SearchPageState createState() => _SearchPageState();
 }
 
@@ -28,24 +26,22 @@ class _SearchPageState extends State<SearchPage> {
             ),
             height: 30,
             decoration: BoxDecoration(
-                color: const Color.fromRGBO(233, 233, 233, 0.8),
+                color: Color.fromRGBO(233, 233, 233, 0.8),
                 borderRadius: BorderRadius.circular(15)),
           ),
           actions: <Widget>[
             InkWell(
-              child: SizedBox(
+              child: Container(
                 // height: ScreenAdapter.height(68),
                 // width: ScreenAdapter.width(80),
                 height: 40,
                 width: 50,
                 child: Row(
-                  children: const <Widget>[Text("搜索")],
+                  children: <Widget>[Text("搜索")],
                 ),
               ),
               onTap: () {
-                if (kDebugMode) {
-                  print("开始搜索");
-                }
+                print("开始搜索");
                 // Navigator.pushReplacementNamed(context, '/productList',
                 //     arguments: {"keywords": this._keywords});
               },
@@ -53,76 +49,81 @@ class _SearchPageState extends State<SearchPage> {
           ],
         ),
         body: Container(
-          padding: const EdgeInsets.all(10),
+          padding: EdgeInsets.all(10),
           child: ListView(
             children: <Widget>[
-              Text("热搜", style: Theme.of(context).textTheme.headline5),
-              const Divider(),
+              Container(
+                child: Text("热搜", style: Theme.of(context).textTheme.headline5),
+              ),
+              Divider(),
               Wrap(
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: const Color.fromRGBO(200, 233, 233, 1),
+                        color: Color.fromRGBO(200, 233, 233, 1),
                         borderRadius: BorderRadius.circular(10)),
-                    child: const Text("理论"),
+                    child: Text("理论"),
                   ),
                   Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: const Color.fromRGBO(200, 233, 233, 1),
+                        color: Color.fromRGBO(200, 233, 233, 1),
                         borderRadius: BorderRadius.circular(10)),
-                    child: const Text("创新"),
+                    child: Text("创新"),
                   ),
                   Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: const Color.fromRGBO(200, 233, 233, 1),
+                        color: Color.fromRGBO(200, 233, 233, 1),
                         borderRadius: BorderRadius.circular(10)),
-                    child: const Text("颠覆"),
+                    child: Text("颠覆"),
                   ),
                   Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: const Color.fromRGBO(200, 233, 233, 1),
+                        color: Color.fromRGBO(200, 233, 233, 1),
                         borderRadius: BorderRadius.circular(10)),
-                    child: const Text("学习"),
+                    child: Text("学习"),
                   ),
                   Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: const Color.fromRGBO(200, 233, 233, 1),
+                        color: Color.fromRGBO(200, 233, 233, 1),
                         borderRadius: BorderRadius.circular(10)),
-                    child: const Text("案例"),
+                    child: Text("案例"),
                   ),
                   Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: const Color.fromRGBO(200, 233, 233, 1),
+                        color: Color.fromRGBO(200, 233, 233, 1),
                         borderRadius: BorderRadius.circular(10)),
-                    child: const Text("案例"),
+                    child: Text("案例"),
                   ),
                   Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: const Color.fromRGBO(200, 233, 233, 1),
+                        color: Color.fromRGBO(200, 233, 233, 1),
                         borderRadius: BorderRadius.circular(10)),
-                    child: const Text("案例"),
+                    child: Text("案例"),
                   )
                 ],
               ),
-              const SizedBox(height: 10),
-              Text("历史记录", style: Theme.of(context).textTheme.headline5),
-              const Divider(),
+              SizedBox(height: 10),
+              Container(
+                child:
+                    Text("历史记录", style: Theme.of(context).textTheme.headline5),
+              ),
+              Divider(),
               Column(
-                children: const <Widget>[
+                children: <Widget>[
                   ListTile(
                     title: Text("理论"),
                   ),
@@ -145,7 +146,7 @@ class _SearchPageState extends State<SearchPage> {
                   Divider(),
                 ],
               ),
-              const SizedBox(height: 100),
+              SizedBox(height: 100),
               InkWell(
                 onTap: () {},
                 child: Container(
@@ -157,7 +158,7 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[Icon(Icons.delete), Text("清空历史记录")],
+                    children: <Widget>[Icon(Icons.delete), Text("清空历史记录")],
                   ),
                 ),
               )

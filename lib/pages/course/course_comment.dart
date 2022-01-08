@@ -7,14 +7,14 @@ class CourseCommentPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: CourseComment(),
     );
   }
 }
 
 class CourseComment extends StatefulWidget {
-  const CourseComment({Key? key}) : super(key: key);
+  CourseComment({Key? key}) : super(key: key);
 
   @override
   _CourseCommentState createState() => _CourseCommentState();
@@ -23,86 +23,88 @@ class CourseComment extends StatefulWidget {
 class _CourseCommentState extends State<CourseComment> {
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      children: [
-        //  评价顶部
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              const Text('综合评分：'),
-              Row(
-                children: const [
-                  Icon(
-                    Icons.star,
-                    color: Colors.orange,
-                    size: 25,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 25,
-                    color: Colors.orange,
-                  ),
-                  Icon(
-                    Icons.star,
-                    color: Colors.orange,
-                    size: 25,
-                  ),
-                  Icon(
-                    Icons.star,
-                    color: Colors.orange,
-                    size: 25,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 25,
-                    color: Colors.white,
-                  ),
-                ],
-              ),
-              const Text(
-                "4.0分",
-                style: TextStyle(fontSize: 16),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(
-          height: 50,
-        ),
-        // 评论列表
-        Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
+    return Container(
+      child: Wrap(
+        children: [
+          //  评价顶部
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Text('综合评分：'),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.orange,
+                      size: 25,
+                    ),
+                    Icon(
+                      Icons.star,
+                      size: 25,
+                      color: Colors.orange,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.orange,
+                      size: 25,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.orange,
+                      size: 25,
+                    ),
+                    Icon(
+                      Icons.star,
+                      size: 25,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
                 Text(
-                  '全部评价(30)',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  "4.0分",
+                  style: TextStyle(fontSize: 16),
                 ),
               ],
             ),
-            Container(
-              padding: const EdgeInsets.only(top: 30),
-              height: 500,
-              child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (BuildContext context, int index) =>
-                      buildEachCourseComment()),
-            ),
-          ],
-        ),
-      ],
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          // 评论列表
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    '全部评价(30)',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.only(top: 30),
+                height: 500,
+                child: ListView.builder(
+                    itemCount: 10,
+                    itemBuilder: (BuildContext context, int index) =>
+                        buildEachCourseComment()),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 
   Container buildEachCourseComment() {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 3),
+      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 3),
       child: ListTile(
-        leading: const CircleAvatar(
+        leading: CircleAvatar(
           backgroundImage: AssetImage('assets/images/logo.png'),
         ),
         title: Column(
@@ -123,7 +125,7 @@ class _CourseCommentState extends State<CourseComment> {
 
   Row buildName() {
     return Row(
-      children: const [
+      children: [
         Text(
           '有志青年',
           style: TextStyle(fontSize: 15),
@@ -141,7 +143,7 @@ class _CourseCommentState extends State<CourseComment> {
 
   Row buildScore() {
     return Row(
-      children: const [
+      children: [
         Icon(
           Icons.star,
           size: 18,
@@ -176,18 +178,18 @@ class _CourseCommentState extends State<CourseComment> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        const Expanded(
+        Expanded(
           flex: 4,
           child: Text(
             '2021-09-08 10:56',
-            style:  TextStyle(color: Color(0xffaaaaaa), fontSize: 12),
+            style: TextStyle(color: Color(0xffaaaaaa), fontSize: 12),
           ),
         ),
         Expanded(
           flex: 1,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               Icon(
                 Icons.mode_comment_outlined,
                 color: Color(0xffaaaaaa),
@@ -215,7 +217,7 @@ class _CourseCommentState extends State<CourseComment> {
 
   Row buildCourseComment() {
     return Row(
-      children: const [
+      children: [
         Expanded(
           child: Text(
             '多行评价文本，此处省略一万字多行评价文本，此处省略一万字多行评价文本，此处省略一万字多行评价文本，此处省略一万字多行评价文本，此处省略一万字',

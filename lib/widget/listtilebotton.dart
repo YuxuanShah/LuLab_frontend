@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../values/myicon.dart';
+import 'package:proflu/values/myIcon.dart';
 
 Widget listtilebotton({
   required BuildContext context,
@@ -8,13 +8,13 @@ Widget listtilebotton({
   required VoidCallback onPressed,
 }) {
   return Container(
-    margin: const EdgeInsets.only(left: 20, right: 20),
+    margin: EdgeInsets.only(left: 20, right: 20),
     color: Colors.white,
     child: ListTile(
       leading: icon,
       title: Text(bottomname),
-      contentPadding: const EdgeInsets.all(0),
-      trailing: const Icon(MyIcon.userRight),
+      contentPadding: EdgeInsets.all(0),
+      trailing: Icon(MyIcon.user_right),
       onTap: onPressed,
     ),
   );

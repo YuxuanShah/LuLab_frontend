@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+
 import '../../widget/widgets.dart';
-import 'course_desc.dart';
 import 'course_comment.dart';
+import 'course_desc.dart';
 import 'course_recom.dart';
 
 /// 课程视频播放页面
 
 class CourseIndexPage extends StatefulWidget {
-  const CourseIndexPage({Key? key, required this.product}) : super(key: key);
-  final product;
+  CourseIndexPage({Key? key, required this.product}) : super(key: key);
+  late final product;
 
   @override
   _CourseIndexPageState createState() => _CourseIndexPageState();
@@ -33,38 +34,41 @@ class _CourseIndexPageState extends State<CourseIndexPage>
     _tabController.dispose();
   }
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(""),
+        title: Text(""),
         toolbarHeight: 0,
         toolbarOpacity: 0,
         backgroundColor: (Colors.black),
       ),
-      body: Column(
-        children: [
-          VideoView(
-            widget.product.videoUrl,
-            //'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-            cover: 'https://images8.alphacoders.com/498/thumb-1920-498307.jpg',
-          ),
-          // tab栏
-          _buildTabNavigation(),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 0),
-              child: TabBarView(
-                controller: _tabController,
-                children: const [
-                  CourseDescPage(),
-                  CourseCommentPage(),
-                  CourseRecomPage(),
-                ],
-              ),
+      body: Container(
+        child: Column(
+          children: [
+            VideoView(
+              widget.product.videoUrl,
+              // widget.product.id,
+              //'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+              cover:
+                  'https://images8.alphacoders.com/498/thumb-1920-498307.jpg',
             ),
-          )
-        ],
+            // tab栏
+            _buildTabNavigation(),
+            Flexible(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 0),
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    CourseDescPage(),
+                    CourseCommentPage(),
+                    CourseRecomPage(),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -77,13 +81,16 @@ class _CourseIndexPageState extends State<CourseIndexPage>
       shadowColor: Colors.grey[100],
       child: Container(
         alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.only(left: 20),
+        padding: EdgeInsets.only(left: 20),
         height: 50,
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _tabBar(),
+            Text(
+              widget.product.id,
+            )
           ],
         ),
       ),

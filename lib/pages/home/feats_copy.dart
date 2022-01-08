@@ -1,8 +1,7 @@
+//这个文件放置功勋园组件
 import 'package:flutter/material.dart';
 
 class FeatsPage extends StatefulWidget {
-  const FeatsPage({Key? key}) : super(key: key);
-
   @override
   _FeatsPageState createState() => _FeatsPageState();
 }
@@ -16,8 +15,8 @@ class _FeatsPageState extends State<FeatsPage> {
     var widgetwidth = screenwidth - 10 * 2;
     return Container(
       height: screenheight,
-      padding: const EdgeInsets.only(left: 10, right: 10),
-      decoration: const BoxDecoration(
+      padding: EdgeInsets.only(left: 10, right: 10),
+      decoration: BoxDecoration(
           //背景颜色在主题处统一设定
           //color: Colors.black12,
           ),
@@ -29,18 +28,18 @@ class _FeatsPageState extends State<FeatsPage> {
               Container(
                 height: 120,
                 width: widgetwidth,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                   //border: Border.all(color: Colors.black54),
                 ),
-                margin: const EdgeInsets.only(top: 10),
+                margin: EdgeInsets.only(top: 10),
                 child: Stack(
                   children: <Widget>[
                     Positioned(
                       top: 10,
                       left: 10,
-                      child: SizedBox(
+                      child: Container(
                         height: 100,
                         width: 100,
                         child: ClipRRect(
@@ -50,10 +49,10 @@ class _FeatsPageState extends State<FeatsPage> {
                         ),
                       ),
                     ),
-                    const Positioned(
+                    Positioned(
                       top: 10,
                       left: 130,
-                      child: SizedBox(
+                      child: Container(
                         height: 20,
                         child: Text(
                           '张三-三哥餐饮CEO',
@@ -63,10 +62,10 @@ class _FeatsPageState extends State<FeatsPage> {
                         ),
                       ),
                     ),
-                    const Positioned(
+                    Positioned(
                       top: 35,
                       left: 130,
-                      child: SizedBox(
+                      child: Container(
                         height: 40,
                         width: 200,
                         child: Text(
@@ -83,10 +82,10 @@ class _FeatsPageState extends State<FeatsPage> {
                       child: Container(
                         height: 20,
                         width: 60,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Colors.grey,
                         ),
-                        child: const Text(
+                        child: Text(
                           '213次观看',
                           style: TextStyle(
                             fontSize: 12,

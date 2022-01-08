@@ -1,11 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'home_feats.dart';
 import 'home_gather.dart';
 import 'home_product.dart';
-import 'home_feats.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -17,14 +17,14 @@ class _HomePageState extends State<HomePage> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        body: const HomePageList(),
+        body: HomePageList(),
         appBar: PreferredSize(
             //设置appBar高度
-            preferredSize: const Size.fromHeight(110),
+            preferredSize: Size.fromHeight(110),
             child: AppBar(
               //由主题统一配色，不在这里重新设定颜色
               //backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-              bottom: const TabBar(
+              bottom: TabBar(
                   tabs: [
                     Tab(text: "推荐区"),
                     Tab(text: "功勋园"),
@@ -56,13 +56,13 @@ class _HomePageState extends State<HomePage> {
 
                 child: Container(
                   height: 30.0,
-                  padding: const EdgeInsets.only(left: 15),
+                  padding: EdgeInsets.only(left: 15),
                   decoration: BoxDecoration(
                       //改变搜索外框颜色
                       //border: Border.all(color: Colors.black),
-                      color: const Color.fromRGBO(230, 230, 230, 0.8),
+                      color: Color.fromRGBO(230, 230, 230, 0.8),
                       borderRadius: BorderRadius.circular(15)),
-                  child: Row(children: const <Widget>[
+                  child: Row(children: <Widget>[
                     Icon(
                       Icons.search,
                       color: (Color.fromRGBO(89, 89, 89, 1)),
@@ -79,25 +79,21 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               leading: IconButton(
-                icon: const Icon(Icons.headset_mic,
+                icon: Icon(Icons.headset_mic,
                     color: Color.fromRGBO(117, 117, 117, 1)),
                 //如果没有onPressed会报错
                 onPressed: () {
-                  if (kDebugMode) {
-                    print("跳转到客服");
-                  }
+                  print("跳转到客服");
                   Navigator.pushNamed(context, '/customer');
                 },
               ),
               actions: [
                 IconButton(
                     onPressed: () {
-                      if (kDebugMode) {
-                        print("我收到的信息");
-                      }
+                      print("我收到的信息");
                       Navigator.pushNamed(context, '/message');
                     },
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.mail,
                       color: Color.fromRGBO(117, 117, 117, 1),
                     ))
@@ -109,7 +105,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 class HomePageList extends StatefulWidget {
-  const HomePageList({Key? key}) : super(key: key);
+  HomePageList({Key? key}) : super(key: key);
 
   @override
   _HomePageListState createState() => _HomePageListState();
@@ -118,7 +114,7 @@ class HomePageList extends StatefulWidget {
 class _HomePageListState extends State<HomePageList> {
   @override
   Widget build(BuildContext context) {
-    return const TabBarView(
+    return TabBarView(
       children: [
         Center(child: Gather()),
         Center(child: FeatsPage()),

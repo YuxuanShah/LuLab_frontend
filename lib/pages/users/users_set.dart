@@ -1,13 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../../widget/widgets.dart';
 
+import '../../widget/widgets.dart';
 import 'users_set_user.dart';
 //import 'users_set_account.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
-
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -19,12 +16,12 @@ class _SettingsPageState extends State<SettingsPage> {
     //double screenwidth = MediaQuery.of(context).size.width;
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
+          title: Text(
             '设置',
             style: TextStyle(color: Colors.black),
           ),
           leading: IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.keyboard_arrow_left,
               color: Colors.black,
             ),
@@ -39,15 +36,15 @@ class _SettingsPageState extends State<SettingsPage> {
           children: [
             listtilebotton(
                 bottomname: "个人信息",
-                icon: const Icon(Icons.ac_unit),
+                icon: Icon(Icons.ac_unit),
                 onPressed: () {
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => const SetUser()));
+                      .push(MaterialPageRoute(builder: (context) => SetUser()));
                 },
                 context: context),
             listtilebotton(
                 bottomname: "账号设置",
-                icon: const Icon(Icons.ac_unit),
+                icon: Icon(Icons.ac_unit),
                 onPressed: () {
                   // Navigator.of(context).push(
                   //     MaterialPageRoute(builder: (context) => SetAccount()));
@@ -55,36 +52,32 @@ class _SettingsPageState extends State<SettingsPage> {
                 context: context),
             listtilebotton(
                 bottomname: "软件升级",
-                icon: const Icon(Icons.ac_unit),
+                icon: Icon(Icons.ac_unit),
                 onPressed: () {
-                  if (kDebugMode) {
-                    print("object");
-                  }
+                  print("object");
                 },
                 context: context),
             listtilebotton(
                 bottomname: "清理缓存",
-                icon: const Icon(Icons.ac_unit),
+                icon: Icon(Icons.ac_unit),
                 onPressed: () {
-                  if (kDebugMode) {
-                    print("object");
-                  }
+                  print("object");
                 },
                 context: context),
             listtilebotton(
                 bottomname: "关于我们",
-                icon: const Icon(Icons.ac_unit),
+                icon: Icon(Icons.ac_unit),
                 onPressed: () {
-                  bounceBottomSheet(context, const Text("data"));
+                  bounceBottomSheet(context, Text("data"));
                 },
                 context: context),
-            const SizedBox(
+            SizedBox(
               height: 30,
             ),
             Container(
               height: 50,
               width: double.infinity,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 border: Border(
                   bottom: BorderSide(
                     width: 1,
@@ -98,11 +91,9 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               child: TextButton(
                 onPressed: () {
-                  if (kDebugMode) {
-                    print("退出登录");
-                  }
+                  print("退出登录");
                 },
-                child: const Text(
+                child: Text(
                   '退出登录',
                   style: TextStyle(
                     fontSize: 17,
