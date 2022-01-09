@@ -36,15 +36,15 @@ class LatestCourse {
   });
 
   final String id;
-  final String title;
-  final String classTags;
-  final String description;
-  final String author;
-  final String authorTags;
-  final String category;
-  final String mode;
-  final String videoUrl;
-  final int duration;
+  final String title; //标题
+  final String classTags; //分类标签
+  final String description; //课程描述简介
+  final String author; //作者
+  final String authorTags; //作者的标签
+  final String category; //文章的分类
+  final String mode; //排版
+  final String videoUrl; //视频链接
+  final int duration; //视频时长
 
   factory LatestCourse.fromJson(Map<String, dynamic> json) => LatestCourse(
         id: json["_id"],
