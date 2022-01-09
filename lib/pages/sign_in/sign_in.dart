@@ -1,12 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../../widget/widgets.dart';
+
+import '../../api/apis.dart';
+import '../../app.dart';
+import '../../entitys/entitys.dart';
+import '../../global.dart';
 import '../../utils/utils.dart';
 import '../../values/values.dart';
-import '../../api/apis.dart';
-import '../../entitys/entitys.dart';
-import '../../app.dart';
-import '../../global.dart';
+import '../../widget/widgets.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -64,7 +65,7 @@ class _SignInPageState extends State<SignInPage> {
 
     // ExtendedNavigator.rootNavigator
     //     .pushReplacementNamed(Routes.applicationPageRoute);
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const App()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => App()));
   }
 
   // 登录表单
