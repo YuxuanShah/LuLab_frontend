@@ -24,7 +24,8 @@ List<Item> generateItems(int numberOfItems) {
 }
 
 class ExpansionPanelPage extends StatefulWidget {
-  const ExpansionPanelPage({Key? key}) : super(key: key);
+  final product;
+  const ExpansionPanelPage({Key? key, required this.product}) : super(key: key);
 
   @override
   _ExpansionPanelPageState createState() => _ExpansionPanelPageState();
@@ -89,7 +90,7 @@ class _ExpansionPanelPageState extends State<ExpansionPanelPage> {
                   //   Icons.security,
                   //   size: 35.0,
                   // ),
-                  const CourseDetail(),
+                  CourseDetail(product: widget.product),
             ),
           ),
           isExpanded: item.isExpanded,
