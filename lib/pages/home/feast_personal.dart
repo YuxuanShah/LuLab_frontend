@@ -31,9 +31,8 @@ class FeastPersonal extends StatelessWidget {
             //从这里开始
             height: 288,
             width: 360,
-
             decoration: const BoxDecoration(
-//背景
+              //背景
               color: Colors.white,
               //设置四周圆角 角度 这里的角度应该为 父Container height 的一半
               borderRadius: BorderRadius.only(
@@ -58,9 +57,9 @@ class FeastPersonal extends StatelessWidget {
             width: 80.0, //容器的相关参数
             height: 25.0,
             // color: Colors.green,
-            child: Image.asset('assets/images/biaoshi.png',
-                fit: BoxFit.fill //在容器中如何填充图片
-                ),
+            child:
+                Image.asset('assets/images/a.png', fit: BoxFit.fill //在容器中如何填充图片
+                    ),
           ),
         ),
         const Positioned(

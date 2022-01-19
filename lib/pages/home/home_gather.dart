@@ -194,7 +194,7 @@ class _GatherState extends State<Gather> {
   }
 
 // 免费体验课程
-  SingleChildScrollView _buildFreeCourse() {
+  SingleChildScrollView buildFreeCourse() {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: 20),
       scrollDirection: Axis.horizontal,
@@ -252,11 +252,11 @@ class _GatherState extends State<Gather> {
       height: 237,
       width: 345,
       // color: Colors.white,
-      child: _buildInfomation_context(),
+      child: buildInfomationContext(),
     );
   }
 
-  ListView _buildInfomation_context() {
+  ListView buildInfomationContext() {
     return ListView.builder(
       itemCount: _focusData2.length,
       itemBuilder: (context, index) {
@@ -299,7 +299,6 @@ class _GatherState extends State<Gather> {
                         ),
                       ),
                     ),
-
                     // 课程标题
                     Positioned(
                       top: 10.0,
