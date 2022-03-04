@@ -2,7 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:proflu/common/api/gql_livecourse.dart';
+import 'package:proflu/common/api/gql_recordadd.dart';
 import 'package:proflu/common/entitys/live_course.dart';
+import 'package:proflu/common/entitys/record_add_data.dart';
+import 'package:proflu/common/global/global.dart';
 import 'package:proflu/pages/course/course_index.dart';
 import 'package:proflu/pages/live/live_detail.dart';
 import 'package:proflu/pages/source/infor_details.dart';
@@ -26,6 +29,9 @@ class _GatherState extends State<Gather> {
   List _focusData2 = [];
   late LiveCourse _liveCourse;
   List _focusData3 = [];
+  late RecordAdd _recordAdd;
+  var _recordData;
+  DateTime now = new DateTime.now();
 
   @override
   void initState() {
@@ -64,6 +70,26 @@ class _GatherState extends State<Gather> {
     setState(() {
       _focusData3 = focusList;
     });
+  }
+
+  //添加预约
+  _handleRecordAdd(int index) async {
+    RecordAddRequest variables = RecordAddRequest(
+      authorId: Global.profile.data.id,
+      status: "1",
+      courseId: _focusData3[index].firstCourseId,
+      onlineTime: now,
+    );
+    _recordAdd = await GqlRecordAddAPI.indexPageInfo(
+        variables: variables, context: context);
+    var recordData = _recordAdd.recordAdd;
+
+    setState(() {
+      _recordData = recordData;
+    });
+
+    // Navigator.of(context).push(MaterialPageRoute(
+    //     builder: (context) => ));
   }
 
   //轮播图
@@ -358,7 +384,10 @@ class _GatherState extends State<Gather> {
                                   borderRadius:
                                       BorderRadius.circular(5))), //圆角弧度
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          //执行预约方法
+                          _handleRecordAdd(index);
+                        },
                       ),
                     )
                   ],

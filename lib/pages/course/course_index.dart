@@ -37,7 +37,6 @@ class _CourseIndexPageState extends State<CourseIndexPage>
 
   // 读取所有课程数据
   _handleCourse() async {
-    print('=====================================================39');
     CourseRequest variables = CourseRequest(dirId: dirId, courseId: courseId);
     _detailCourse = await GqlDetailCourseAPI.indexPageInfo(
         variables: variables, context: context);
@@ -74,10 +73,9 @@ class _CourseIndexPageState extends State<CourseIndexPage>
       body: Column(
         children: [
           VideoView(
-            // widget.product.videoUrl,
-            'https://media.w3.org/2010/05/sintel/trailer.mp4',
+            widget.product.videoUrl,
             //'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-            cover: 'https://images8.alphacoders.com/498/thumb-1920-498307.jpg',
+            cover: widget.product.imgUrl,
           ),
           // tab栏
           _buildTabNavigation(),
@@ -102,8 +100,6 @@ class _CourseIndexPageState extends State<CourseIndexPage>
 
   //课程简介
   ListView buildCourseDetail() {
-    print('===========================31');
-    print(_focusData.title);
     return ListView(
       children: [
         const Divider(
@@ -201,10 +197,6 @@ class _CourseIndexPageState extends State<CourseIndexPage>
               if (_focusData.subCourses.isNotEmpty) {
                 return InkWell(
                   onTap: () async {
-                    print(
-                        '==================================================================131');
-                    print(_focusData.subCourses[index].subTitle);
-                    print('到课程详情');
                     setState(() {
                       this.dirId = _focusData.subCourses[index].mainCourseId;
                       this.courseId = _focusData.subCourses[index].courseId;
